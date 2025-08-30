@@ -1,11 +1,13 @@
 import { getUser } from "./services/user.js"
 import { getRepos } from "./services/repositories.js"
+import { getEvents } from "./services/events.js"
 
 import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
 
 async function getUserData(userName){
     const userResponse = await getUser(userName)
+    const eventsResponse = await getEvents(userName)
     const repositoriesResponse = await getRepos(userName)
 
     if (userResponse.message === "Not Found"){
@@ -13,10 +15,14 @@ async function getUserData(userName){
         return
     }
 
+    
+
     user.setInfo(userResponse)
+    user.setEvents(eventsResponse)
     user.setRepos(repositoriesResponse)
 
     screen.renderUser(user)
+    screen.renderEvents(user)
     screen.renderRepos(user)
 }
 
