@@ -15,8 +15,6 @@ async function getUserData(userName){
         return
     }
 
-    
-
     user.setInfo(userResponse)
     user.setEvents(eventsResponse)
     user.setRepos(repositoriesResponse)

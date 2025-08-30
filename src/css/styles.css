@@ -134,13 +134,26 @@ main {
   justify-content: center;
 }
 
-.container .profile-data .repositories ul li a{
+.container .profile-data .repositories ul li{
   padding: 20px;
   border: 1px solid grey;  
   margin: 20px;
+  line-height: 40px;
   display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
+}
+
+.container .profile-data .repositories ul li a{
+  font-weight: 600;
+  padding: 10px;
+}
+
+.container .profile-data .repositories ul li p span{
+  background-color: rgb(86, 86, 165);
+  padding: 5px;
+  color: #FFFFFF;
+  border-radius: 7px;
 }
 
 .container .profile-data .repositories ul li a:hover{
